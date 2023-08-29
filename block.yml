@@ -1,0 +1,19 @@
+#!/usr/bin/env
+
+- name: Try blocks
+  hosts: all
+  become: no
+  gather_facts: no
+
+  tasks:
+    - name: Do something
+      when:
+        - ansible_os_family == "RedHat"
+      block:
+        - name: Show first
+          ansible.builtin.debug:
+            msg: "One"
+    
+        - name: Show second
+          ansible.builtin.debug:
+            msg: "Two"
