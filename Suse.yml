@@ -1,0 +1,5 @@
+---
+
+- name: Show message
+  ansible.builtin.debug:
+    msg: "I am Suse."

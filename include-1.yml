@@ -1,0 +1,15 @@
+#!/usr/bin/env ansible-playbook
+- name: Do something
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: Include RedHat tasks
+      ansible.builtin.include_tasks: RedHat.yml
+      when:
+        - ansible_os_family == "RedHat"
+
+    - name: Include Debian tasks
+      ansible.builtin.include_tasks: Debian.yml
+      when:
+        - ansible_os_family == "Debian"

@@ -1,0 +1,16 @@
+#!/usr/bin/env ansible-playbook
+- name: Do something
+  hosts: all
+  gather_facts: yes
+
+  vars:
+    _message:
+      default: "Linux, any kind please."
+      Debian: "Linux is a way of living."
+      RedHat: "Linux is my profession."
+    message: "{{ _message[ansible_os_family] | default(_message['default']) }}"
+
+  tasks:
+    - name: Do something
+      ansible.builtin.debug:
+        msg: "{{ message }}"

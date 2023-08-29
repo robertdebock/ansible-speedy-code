@@ -1,0 +1,3 @@
+node-1 ansible_connection=docker
+node-2 ansible_connection=docker
+node-3 ansible_connection=docker

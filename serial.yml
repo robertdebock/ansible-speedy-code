@@ -1,0 +1,26 @@
+#!/usr/bin/env ansible-playbook
+- name: Do something
+  hosts: all
+  gather_facts: no
+  serial: 50%
+
+  tasks:
+    - name: Show one
+      ansible.builtin.debug:
+        msg: "1"
+
+    - name: Show two
+      ansible.builtin.debug:
+        msg: "2"
+
+    - name: Show three
+      ansible.builtin.debug:
+        msg: "3"
+
+    - name: Show four
+      ansible.builtin.debug:
+        msg: "4"
+
+    - name: Show five
+      ansible.builtin.debug:
+        msg: "5"

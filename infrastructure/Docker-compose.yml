@@ -1,0 +1,14 @@
+version: '3'
+services:
+  node-1:
+    image: robertdebock/fedora
+    container_name: node-1
+    command: sh -c "sleep 7200"
+  node-2:
+    image: robertdebock/debian
+    container_name: node-2
+    command: sh -c "sleep 7200"
+  node-3:
+    image: robertdebock/opensuse
+    container_name: node-3
+    command: sh -c "sleep 7200"

@@ -1,0 +1,17 @@
+#!/usr/bin/env ansible-playbook
+- name: Do something
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: Do something
+      ansible.builtin.debug:
+        msg: "Hello RedHat"
+      when:
+        - ansible_os_family == "RedHat"
+    
+    - name: Do some other thing
+      ansible.builtin.debug:
+        msg: "Hello Debian!"
+      when:
+        - ansible_os_family == "Debian"

@@ -1,0 +1,9 @@
+#!/usr/bin/env ansible-playbook
+- name: Do something
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: Do something
+      ansible.builtin.debug:
+        msg: "Hello {{ ansible_os_family }}!"
